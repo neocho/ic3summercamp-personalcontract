@@ -3,10 +3,13 @@
 	<head>
 		<title>Personal Smart Contract</title>
 		
+		<!-- CSS -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="index.css">
 
+		<!-- JS & Web3 -->
 		<script src="index.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<head>
 	<body>
 		<div id="container">
@@ -18,7 +21,25 @@
 			<div id="onboarding">
 				<h2>Onboarding Steps</h2>
 			</div>
+
+			<div id="contract">
+				<button id="createContractButton">Create Contract</button>
+			</div>
+
+			<div id="web3Test">
+				<h2>TEST WEB3 Connection</h2>
+				<h2>Enter your Ethereum Address:</h2>
+				<input type="text" size="50" id="address" />
+				<button type="button" id="getBalance">Get Balance</button>
+				<br />
+				<br />
+				<div id="output"></div>
+			</div>
 		</div>
+
+
+
+		
 
 	</body>
 </html>

@@ -10,12 +10,36 @@ body {
     justify-content: center;
 }
 
-#header{
+#header {
     text-align: center;
 }
 
 #onboarding {
     margin-top: 100px;
+}
+
+#contract {
+    margin-top: 50px;
+}
+
+#createContractButton {
+    width: 130px;
+    height: 35px;
+    border: 1px solid #8d8989;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#output{
+    color:#ffffff;
+}
+
+#web3Test{
+    margin-top: 100px;
+    width: 500px;
+    border: solid;
+    border-width: 5px;
+    border-color: #ffffff;
 }
 
 h1 {

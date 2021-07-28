@@ -18,12 +18,25 @@ body {
     margin-top: 100px;
 }
 
-#contract {
-    margin-top: 50px;
+#wallet {
+    margin-top: 100px;
+    margin-bottom: 10px;
 }
 
-#createContractButton {
-    width: 130px;
+#contract {
+    margin-bottom: 50px;
+}
+
+#store {
+    margin-bottom: 50px;
+}
+
+#output {
+    margin-bottom: 10px;
+}
+
+#createContractButton, #connectWalletButton, #storeButton, #outputButton {
+    width: 200px;
     height: 35px;
     border: 1px solid #8d8989;
     border-radius: 15px;

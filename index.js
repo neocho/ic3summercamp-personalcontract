@@ -1,18 +1,35 @@
-let contractAddress = "0x74Cc97F1C0B94B2491B64033081358b106A79C66"; 
-let abi_json = {"result":"[{\"inputs\":[],\"name\":\"retrieve\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"num\",\"type\":\"uint256\"}],\"name\":\"store\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"};
+let contractAddress = "0x4aD9f03bB9D9058982100ed4385EC0B99F587069"; 
 let user; 
 let personalContract; 
+let abiJson = [{"inputs":[],"name":"retrieve","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"num","type":"uint256"}],"name":"store","outputs":[],"stateMutability":"nonpayable","type":"function"}]
 
 async function createContract() {
     if(user){
-        let accounts = await web3.eth.getAccounts(); 
-        let usersAccount = accounts[0];
+        let bytecode = await web3.eth.getCode(contractAddress);
 
-        let contract_abi = JSON.parse(abi_json.result);
-
-        personalContract = new web3.eth.Contract(contract_abi, contractAddress, {
-            from: usersAccount, 
-        });
+        console.log("Get Bytecode: " + bytecode);
+        
+		await new web3.eth.Contract(abiJson)
+			.deploy({
+				data: bytecode, 
+            })
+			.send({
+				from: user,
+                gas: 1500000,
+                gasPrice: '80000000'
+			}, function(error, txHash){
+                console.log(error);
+                console.log(txHash);
+            })
+            .on('receipt', function(receipt){
+                console.log(receipt.contractAddress);
+            })
+            .on('confirmation', function(confirmationNumber, receipt){ 
+                console.log("confirmationNumber: " + confirmationNumber);
+             })
+            .then((contractInstance)=>{
+                personalContract = contractInstance.options.address;
+            });
 
     }else {
         console.log("No Wallet Connected.");

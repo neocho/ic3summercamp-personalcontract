@@ -27,13 +27,6 @@ body {
     margin-bottom: 50px;
 }
 
-#store {
-    margin-bottom: 50px;
-}
-
-#output {
-    margin-bottom: 10px;
-}
 
 #createContractButton, #connectWalletButton, #storeButton, #outputButton {
     width: 200px;

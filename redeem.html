@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Personal Smart Contract</title>
+		<title>Redeem</title>
 		
 		<!-- CSS -->
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="index.css">
 
 		<!-- JS & Web3 -->
-		<script src="home.js"></script>
+		<script src="redeem.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1>Personal Smart Contract</h1>
-				<h2>Living the decentralized life</h2>
+				<h1>Enter private key:</h1>
 			</div>
 
-			<div id="onboarding">
-				<h2>How to get started creating a PSC: </h2>
-				
-			</div>
-			
-
-			<div id="wallet">
+            <!-- <div id="wallet">
 				<button id="connectWalletButton">Connect Wallet</button>
-			</div>
-
-			<div id="contract">
-				<button id="createContractButton">Create Contract</button>
-			</div>
+			</div> -->
+			<input id="privateKey"></input>
+            <button id="redeemButton">Sign</button>
+			
 		</div>
 	</body>
 </html>
